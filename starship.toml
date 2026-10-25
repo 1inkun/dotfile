@@ -1,0 +1,72 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$time\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$nodejs\
+$c\
+$golang\
+$python\
+$line_break\
+$character"""
+
+# 在提示符之间插入空行
+add_newline = false
+
+palette = 'gruvbox_dark'
+
+[palettes.gruvbox_dark]
+olor_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[username]
+show_always = true
+format = '[$user ]($style)'
+
+[directory]
+style = "blue"
+
+[character]
+disabled = false
+success_symbol = '[-](bold fg:color_green)'
+error_symbol = '[x](bold fg:color_red)'
+
+[git_branch]
+symbol = ""
+format = "[$symbol $branch ]($style)"
+style = "bright-black"
+
+[git_status]
+style = "bg:yellow"
+format = '[[($all_status $ahead_behind )](fg:crust bg:yellow)]($style)'
+
+[c]
+symbol = "C "
+format = '[$symbol($version)]($style)'
+
+
+[golang]
+symbol = "Go "
+format = '[$symbol]($style)'
+
+[nodejs]
+symbol = "Node "
+format = '[$symbol]($style)'
+
+[python]
+symbol = "Python "
+format = '[$symbol]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bright-black"
+format = '[|$time ]($style)'
